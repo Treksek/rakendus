@@ -26,7 +26,7 @@
 		$taustColor = "day";
 	} 
 	else {
-		$taustColor = "night";
+		$taustColor = "evening";
 	}
 	 
 
@@ -83,7 +83,7 @@
 	$pealkiri = "<h3>Nüüd tulevad kolm juhuslikku pilti Haapsalust</h3>";
 
 	$kolmPiltiList = [];
-	$juhuslikIMGHTML = '';
+	$juhuslikIMGHTML = "";
 	
 	if($photoCount > 0){
 		do {
@@ -96,7 +96,7 @@
 		while (count($kolmPiltiList)<=2);
 		} 
 	else {
-		$juhuslikIMGHTML = '<p>Kuvamiseks pole ühtegi pilti</p>';
+		$juhuslikIMGHTML = "<p>Kuvamiseks pole ühtegi pilti</p>";
 	}
 	
 
@@ -124,7 +124,7 @@
 		background-color: pink;
 		color: purple;
 	}
-	.night {
+	.evening {
 		background-color: green;
 		color: darkblue;
 	}
