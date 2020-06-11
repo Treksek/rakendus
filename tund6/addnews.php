@@ -82,7 +82,7 @@
 		//saadame andmebaasi
 		if(empty ($newsError)) {
 			//echo "Salvestame!";
-			$response = saveNews($_SESSION["userid"], $newsTitle, $newsContent, $newsPicture);
+			$response = saveNews($_SESSION["userid"], $newsTitle, $newsContent, .$photoUp->fileName);
 			if($response ==1){
 				$newsError = "Uudis on salvestatud!";
 			} else {
