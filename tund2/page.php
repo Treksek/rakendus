@@ -1,4 +1,8 @@
 <?php
+	require("../../../../configuration.php");
+	require("fnc_news.php");
+
+
 	$myName = "Daire Lüüs";
 	$fullTimeNow = 	date("d.m.Y H:i:s");
 	//<p>Lehe avamise hetkel oli: <strong> 31.01.2020 11:32:07</strong></p>
@@ -66,12 +70,14 @@
 	$photoList = [];
 	$allFiles = array_slice(scandir($picsDir), 2);
 	//var_dump($allFiles);
-	foreach($allFiles as $file){
-        $fileInfo = getimagesize($picsDir .$file);
-        if(in_array($fileInfo["mime"], $photoTypesAllowed) == true){
-            array_push($photoList, $file);
-        }
-    }
+	foreach($allFiles as $file) {
+		$fileInfo = getimagesize($picsDir .$file);
+		if(in_array($fileInfo["mime"], $photoTypesAllowed) == true) {
+			array_push($photoList, $file);
+			
+			}
+		
+	}
 	$photoCount = count($photoList);
 	$photoNum = mt_rand(0, $photoCount - 1);
 	$randomImageHTML = '<img src="' .$picsDir .$photoList[$photoNum] .'" alt="juhuslik pilt Haapsalust">' ."\n";
@@ -98,7 +104,7 @@
 	}
 	
 
-
+	$newsHTML = readNews(1);
 
 
 
@@ -146,6 +152,13 @@
 		
 		
 	?>
+
+<br>
+	<hr>
+	<h2>Uudis</h2>
+	<div>
+		<?php echo $newsHTML; ?>
+	</div>
 	
 </body>
 </html>
